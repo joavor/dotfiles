@@ -1,0 +1,106 @@
+format = """
+$os\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_metrics\
+$git_status\
+$line_break\
+$python\
+$character"""
+
+right_format = """
+$cmd_duration\
+"""
+
+[os]
+format = "[$symbol](blue)"
+disabled = false
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""
+
+[directory]
+format = " [$path](blue) "
+style = "blue"
+
+[character]
+success_symbol = "[](blue)"
+error_symbol = "[](red)"
+vimcmd_symbol = "[](green)"
+
+[git_branch]
+symbol = ""
+style = "bg:color_aqua"
+format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
+
+[git_metrics]
+format = ' ([▴$added]($added_style)) ([▿$deleted]($deleted_style)) '
+added_style = 'green'
+deleted_style = 'red'
+ignore_submodules = true
+disabled = false
+
+[git_status]
+style = "bold bright-blue"
+format = "([ $ahead_behind$staged$modified$untracked$renamed$deleted$conflicted$stashed ]($style))"
+conflicted = "[◪◦](bright-magenta)"
+ahead = "[▴│[${count}](bold white)│](green)"
+behind = "[▿│[${count}](bold white)│](red)"
+diverged = "[◇ ▴┤[${ahead_count}](regular white)│▿┤[${behind_count}](regular white)│](bright-magenta)"
+untracked = "[◌◦](bright-yellow)"
+stashed = "[◃◈](white)"
+modified = "[●◦](yellow)"
+staged = "[▪┤[$count](bold white)│](bright-cyan)"
+renamed = "[◎◦](bright-blue)"
+deleted = "[✕](red)"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
+
+[python]
+format = "[$virtualenv]($style) "
+style = "bright-black"
+
+# # Get editor completions based on the config schema
+# "$schema" = 'https://starship.rs/config-schema.json'
+#
+# # Inserts a blank line between shell prompts
+# add_newline = true
+# command_timeout = 2000
+#
+# # Replace the '❯' symbol in the prompt with '➜'
+# [character] # The name of the module we are configuring is 'character'
+# success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+#
+# # Disable the package module, hiding it from the prompt completely
+# [package]
+# disabled = true
+#
+# [dotnet]
+# symbol = '💫 '
+# style = 'green'
+# heuristic = false
+# detect_extensions = ['csproj', 'fsproj', 'xproj', '.sln']

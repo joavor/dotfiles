@@ -1,0 +1,7 @@
+require("config.leader")
+require("config.options")
+require("config.lazy")
+require("config.colorscheme")
+require("config.autocommands")
+require("config.commands")
+require("config.keymaps")

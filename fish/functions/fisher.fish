@@ -1,0 +1,1 @@
+/Users/joavor/Development/personal/repos/dotfiles/fish/fisher.fish

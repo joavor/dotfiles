@@ -1,0 +1,200 @@
+# After that, you can edit ~/.aerospace.toml to your liking
+
+# It's not necessary to copy all keys to your config.
+# If the key is missing in your config, "default-config.toml" will serve as a fallback
+
+# You can use it to add commands that run after login to macOS user session.
+# 'start-at-login' needs to be 'true' for 'after-login-command' to work
+# Available commands: https://nikitabobko.github.io/AeroSpace/commands
+after-login-command = []
+
+# You can use it to add commands that run after AeroSpace startup.
+# 'after-startup-command' is run after 'after-login-command'
+# Available commands : https://nikitabobko.github.io/AeroSpace/commands
+# after-startup-command = [
+#    "exec-and-forget borders active_color=0xff8cbf7d inactive_color=0x008cbf7d width=8.0"
+# ]
+
+# Start AeroSpace at login
+start-at-login = false
+
+# Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+accordion-padding = 30
+
+default-root-container-layout = "tiles"
+
+default-root-container-orientation = "auto"
+
+key-mapping.preset = "qwerty"
+
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+on-focus-changed = ['move-mouse window-lazy-center']
+
+
+
+[gaps]
+
+inner.horizontal = 4
+inner.vertical =   4
+outer.left =       8
+outer.bottom =     8
+outer.top =        8
+outer.right =      8
+# inner.horizontal = 16
+# inner.vertical =   16
+# outer.left =       16
+# outer.bottom =     16
+# outer.top =        16
+# outer.right =      16
+
+
+
+[mode.main.binding]
+
+ctrl-cmd-alt-h = "focus left"
+ctrl-cmd-alt-j = "focus down"
+ctrl-cmd-alt-k = "focus up"
+ctrl-cmd-alt-l = "focus right"
+
+ctrl-cmd-alt-shift-h = "move left"
+ctrl-cmd-alt-shift-j = "move down"
+ctrl-cmd-alt-shift-k = "move up"
+ctrl-cmd-alt-shift-l = "move right"
+
+ctrl-cmd-alt-comma = "resize smart -64"
+ctrl-cmd-alt-period = "resize smart +64"
+ctrl-cmd-alt-shift-comma = "resize smart -128"
+ctrl-cmd-alt-shift-period = "resize smart +128"
+
+ctrl-cmd-alt-tab = "workspace-back-and-forth"
+
+ctrl-cmd-alt-1 = "workspace 1" # Main 1
+ctrl-cmd-alt-2 = "workspace 2" # Main 2
+ctrl-cmd-alt-3 = "workspace 3" # Main 3
+ctrl-cmd-alt-4 = "workspace 4" # Main 4
+ctrl-cmd-alt-5 = "workspace 5" # Main 5
+ctrl-cmd-alt-6 = "workspace 6" # Main 6
+ctrl-cmd-alt-7 = "workspace 7" # Main 7
+ctrl-cmd-alt-8 = "workspace 8" # Main 8
+ctrl-cmd-alt-9 = "workspace 9" # Main 9
+ctrl-cmd-alt-t = "workspace T" # Main - Terminal
+ctrl-cmd-alt-a = "workspace A" # Secondary 1
+ctrl-cmd-alt-s = "workspace S" # Secondary 2
+ctrl-cmd-alt-d = "workspace D" # Secondary 3
+ctrl-cmd-alt-f = "workspace F" # Secondary 4
+ctrl-cmd-alt-m = "workspace M" # Secondary - Music
+
+ctrl-cmd-alt-shift-1 = ["move-node-to-workspace 1", "workspace 1"]
+ctrl-cmd-alt-shift-2 = ["move-node-to-workspace 2", "workspace 2"]
+ctrl-cmd-alt-shift-3 = ["move-node-to-workspace 3", "workspace 3"]
+ctrl-cmd-alt-shift-4 = ["move-node-to-workspace 4", "workspace 4"]
+ctrl-cmd-alt-shift-5 = ["move-node-to-workspace 5", "workspace 5"]
+ctrl-cmd-alt-shift-6 = ["move-node-to-workspace 6", "workspace 6"]
+ctrl-cmd-alt-shift-7 = ["move-node-to-workspace 7", "workspace 7"]
+ctrl-cmd-alt-shift-8 = ["move-node-to-workspace 8", "workspace 8"]
+ctrl-cmd-alt-shift-9 = ["move-node-to-workspace 9", "workspace 9"]
+ctrl-cmd-alt-shift-t = ["move-node-to-workspace T", "workspace T"]
+ctrl-cmd-alt-shift-a = ["move-node-to-workspace A", "workspace A"]
+ctrl-cmd-alt-shift-s = ["move-node-to-workspace S", "workspace S"]
+ctrl-cmd-alt-shift-d = ["move-node-to-workspace D", "workspace D"]
+ctrl-cmd-alt-shift-f = ["move-node-to-workspace F", "workspace F"]
+ctrl-cmd-alt-shift-m = ["move-node-to-workspace M", "workspace M"]
+
+ctrl-cmd-alt-shift-left = ["join-with left", "mode main"]
+ctrl-cmd-alt-shift-down = ["join-with down", "mode main"]
+ctrl-cmd-alt-shift-up = ["join-with up", "mode main"]
+ctrl-cmd-alt-shift-right = ["join-with right", "mode main"]
+
+ctrl-cmd-alt-left = "layout h_accordion"
+ctrl-cmd-alt-right = "layout h_tiles"
+ctrl-cmd-alt-up = "layout v_accordion"
+ctrl-cmd-alt-down = "layout v_tiles"
+
+ctrl-cmd-alt-space = "mode join"
+ctrl-cmd-alt-enter = "mode misc"
+ctrl-cmd-alt-esc = "mode service"
+
+
+
+[mode.join.binding]
+
+esc = "mode main"
+enter = "mode main"
+
+g = "layout tiles horizontal vertical"
+a = "layout accordion horizontal vertical"
+shift-g = ["layout tiles horizontal vertical", "mode main"]
+shift-a = ["layout accordion horizontal vertical", "mode main"]
+
+f = ["flatten-workspace-tree", "mode main"]
+r = ["balance-sizes", "mode main"]
+
+
+
+[mode.misc.binding]
+
+esc = "mode main"
+
+ctrl-cmd-alt-period = ["exec-and-forget xcrun simctl ui booted appearance dark", "mode main"]
+ctrl-cmd-alt-comma = ["exec-and-forget xcrun simctl ui booted appearance light", "mode main"]
+
+
+
+[mode.service.binding]
+
+esc = "mode main"
+
+enter = [
+    "reload-config",
+    "mode main"
+]
+
+[workspace-to-monitor-force-assignment]
+
+1 = "main"
+2 = "main"
+3 = "main"
+4 = "main"
+5 = "main"
+6 = "main"
+7 = "main"
+8 = "main"
+9 = "main"
+T = "main"
+
+A = "secondary"
+S = "secondary"
+D = "secondary"
+F = "secondary"
+M = "secondary"
+
+
+
+[[on-window-detected]]
+if.app-id = "com.apple.mail"
+run = "move-node-to-workspace A"
+
+[[on-window-detected]]
+if.app-id = "com.microsoft.Outlook"
+run = "move-node-to-workspace A"
+
+[[on-window-detected]]
+if.app-id = "com.microsoft.teams2"
+run = "move-node-to-workspace A"
+
+[[on-window-detected]]
+if.app-id = "com.apple.Music"
+run = "move-node-to-workspace M"
+
+
+
+# [[on-window-detected]]
+# if.app-id = 'com.apple.finder'
+# run = [ "layout floating" ] 
+
+[[on-window-detected]]
+if.app-id = "com.DanPristupov.Fork"
+run = "layout floating"

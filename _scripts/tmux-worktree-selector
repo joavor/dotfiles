@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+is_bare_repo() {
+    [[ $(git rev-parse --is-bare-repository 2>/dev/null) == "true" ]]
+}
+
+if is_bare_repo; then
+    if [[ $# -eq 1 ]]; then
+        selected=$1
+    else
+        selected=$(git worktree list | fzf --tmux center)
+    fi
+
+    selected_dir=$(echo $selected | awk '{print $1}')
+
+    cd $selected_dir
+    nvim .
+else
+    echo "Not in a bare git repo"
+fi
+
+# if [[ -z $selected ]]; then
+#     exit 0
+# fi
+#
+# selected_name=$(basename "$selected" | tr . _)
+# tmux_running=$(pgrep tmux)
+#
+# if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+#     echo $selected
+#     exit 0
+# fi

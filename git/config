@@ -1,0 +1,46 @@
+[log]
+    abbrevCommit = true  # short commits
+    graphColors = blue,yellow,cyan,magenta,green,red
+
+[diff]
+    context = 3
+    renames = copies
+    interHunkContext = 10
+
+[pager]
+    branch = false
+    diff = diff-so-fancy | less --tabs=4 -RFX
+
+[interactive]
+    diffFilter = diff-so-fancy --patch
+    singlekey = true
+
+[color "blame"]
+    highlightRecent = black bold,1 year ago,white,1 month ago,default,7 days ago,blue
+
+[color "branch"]
+    current  = magenta
+    local    = default
+    remote   = yellow
+    upstream = green
+    plain    = blue
+
+[color "diff"]
+    meta       = black bold
+    frag       = magenta
+    context    = white
+    whitespace = yellow reverse
+
+
+
+# Third-party: diff-so-fancy
+
+[diff-so-fancy]
+    markEmptyLines = false
+
+
+
+# URL short-hands
+
+[url "git@github.com:"]
+    insteadOf = "gh:"

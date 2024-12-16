@@ -1,0 +1,16 @@
+vim.api.nvim_create_user_command("DotnetBuild", ":terminal dotnet build", {})
+vim.api.nvim_create_user_command("DotnetDebug", ":terminal dotnet run", {})
+vim.api.nvim_create_user_command("DotnetRun", ":terminal dotnet run", {})
+vim.api.nvim_create_user_command("DotnetPublish", ":terminal dotnet publish", {})
+
+vim.api.nvim_create_user_command("ExpoStart", function()
+  vim.api.nvim_command("TermExec direction=vertical size=64 name=npm_expo cmd='npx expo start'")
+end, {})
+vim.api.nvim_create_user_command("ExpoRefresh", function()
+  vim.api.nvim_command("normal! | call feedkeys('ii')")
+end, {})
+
+vim.api.nvim_create_user_command("QuickfixClear", function()
+  vim.api.nvim_command("cexpr []")
+  vim.api.nvim_command("close")
+end, {})

@@ -1,0 +1,117 @@
+" Set shell
+set shell=bash.exe
+set shellcmdflag=-c
+
+" Set scroll offset
+set scrolloff=15
+
+" Set search options
+set incsearch
+set ignorecase
+set hlsearch
+set notimeout
+
+
+
+
+" Plugins
+set highlightedyank
+set commentary
+set textobj-indent
+set surround
+set nerdtree
+set easymotion
+set metchit
+set which-key
+
+
+
+" Configure which-key
+let g:WhichKey_FontFamily = 'JetBrains Mono Medium'
+let g:WhichKey_KeyColor = '#39cc9b'
+let g:WhichKey_CommandStyle = 'none'
+let g:WhichKey_CommandColor = 'default'
+let g:WhichKey_PrefixColor = 'gray'
+
+" Set leader
+let mapleader = ' '
+" nnoremap <space> <nop>
+
+
+
+" Modes
+map <leader>mp <Action>(TogglePresentationMode)
+map <leader>md <Action>(ToggleDistractionFreeMode)
+map <leader>mz <Action>(ChangeIdeScale)
+map <leader>mc <Action>(ToggleCompactMode)
+
+" Code
+map <leader>cf <Action>(ReformatCode)
+map <leader>cc <Action>(CommentByLineComment)
+
+" Navigation: Code
+nmap gd <Action>(GotoDeclaration)
+nmap gi <Action>(GotoImplementation)
+nmap gu <Action>(ShowUsages)
+
+nmap gA <Action>(ShowIntentionActions)
+nmap gG <Action>(Generate)
+
+nmap gN <Action>(Back)
+nmap gn <Action>(Forward)
+
+" Navigation: Files
+map <leader><leader> <Action>(Switcher)
+nmap <leader>ff <Action>(SearchEverywhere)
+nmap <c-l> <Action>(NextTab)
+nmap <c-h> <Action>(PreviousTab)
+nmap <leader>q <Action>(CloseContent)
+nmap <leader>r <Action>(RenameFile)
+
+" Navigation: Splitting
+nmap <leader>wl <Action>(NextSplitter)
+nmap <leader>wh <Action>(PrevSplitter)
+nmap <leader>wL <Action>(MoveTabRight)
+nmap <leader>wJ <Action>(MoveTabDown)
+nmap <leader>wR <Action>(UnsplitAll)
+
+" Navigation: Errors 
+nmap <leader>en <Action>(GotoNextError)
+nmap <leader>eN <Action>(GotoPreviousError)
+
+" Navigation: Easymotion
+nmap <leader>f <Plug>(easymotion-s)
+
+" Database
+nmap <leader>dbs <Action>(DatabaseView.Tools.SubmitChanges)
+nmap <leader>dbr <Action>(DatabaseView.Refresh)
+nmap <leader>dbc <Action>(Jdbc.OpenConsole.New.Generate)
+
+" Misc
+nmap <leader>so <Action>(IdeaVim.ReloadVimRc.reload)
+nmap <esc> :noh<CR>
+
+
+
+
+""" """"""""""""""
+""" Rider specific
+""" """"""""""""""
+
+if &ide =~? 'jetbrains rider'
+    " Build and debug
+    nmap <leader>bs <Action>(BuildSolutionAction)
+    nmap <leader>bc <Action>(CleanSolutionAction)
+    nmap <leader>bd <Action>(Debug)
+    nmap <leader>bb <Action>(ToggleLineBreakpoint)
+    nmap <leader>mn <Action>(Macro.CreateMigration)
+end
+
+
+
+""" """""""""""""""""
+""" DataGrip specific
+""" """""""""""""""""
+
+if &ide =~? 'datagrip'
+end
