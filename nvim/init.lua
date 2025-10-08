@@ -141,7 +141,6 @@ else
 end
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux tmux-sessions<CR>")
 vim.keymap.set("n", "<C-a>", "<cmd>silent !tmux tmux-session-actions<CR>")
-vim.keymap.set("n", "<C-g>", "<cmd>silent !tmux tmux-session-worktrees<CR>")
 vim.keymap.set("n", "<leader>X", function()
   local file = vim.fn.expand("%:p")
   vim.fn.system({ "tmux", "popup", file })
