@@ -48,6 +48,7 @@ map <leader>mc <Action>(ToggleCompactMode)
 " Code
 map <leader>cf <Action>(ReformatCode)
 map <leader>cc <Action>(CommentByLineComment)
+map <leader>CC <Action>(de.netnexus.CamelCasePlugin.ToggleCamelCase)
 
 " Navigation: Code
 nmap gd <Action>(GotoDeclaration)
