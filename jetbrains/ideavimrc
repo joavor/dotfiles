@@ -75,9 +75,12 @@ nmap <leader>wL <Action>(MoveTabRight)
 nmap <leader>wJ <Action>(MoveTabDown)
 nmap <leader>wR <Action>(UnsplitAll)
 
-" Navigation: Errors 
-nmap <leader>en <Action>(GotoNextError)
-nmap <leader>eN <Action>(GotoPreviousError)
+" Navigation: Errors
+nmap <leader>ee <Action>(ShowErrorDescription)
+nmap <leader>ej <Action>(GotoNextError)
+nmap <leader>ekp<Action>(GotoPreviousError)
+nmap <leader>en <Action>(ReSharperGotoNextErrorInSolution)
+nmap <leader>eN <Action>(ReSharperGotoPrevErrorInSolution)
 
 " Navigation: Easymotion
 nmap <leader>f <Plug>(easymotion-s)
