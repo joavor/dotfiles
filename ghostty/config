@@ -1,4 +1,4 @@
-theme = Everforest Dark - Hard
+theme = everforest-dark
 macos-titlebar-style = hidden
 window-padding-balance = true
 window-padding-x = 24
@@ -7,6 +7,8 @@ window-padding-y = 24
 font-family = JetBrains Mono NL Regular
 
 cursor-style = block
+cursor-style-blink = true
 
-background-opacity = 0.9
-background-blur = true
+background = 1a1a1a
+background-opacity = 0.95
+background-blur = 40
