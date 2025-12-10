@@ -87,6 +87,6 @@ vim.g.augment_save_chat_history = true
 -- Set chat history format (optional)
 vim.g.augment_chat_history_format = "markdown"
 
-vim.diagnostic.config({
-  virtual_lines = { current_line = true },
-})
+-- vim.diagnostic.config({
+--   virtual_lines = { current_line = false },
+-- })

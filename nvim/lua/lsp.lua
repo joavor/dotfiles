@@ -18,10 +18,10 @@ end
 
 -- Settings
 
-vim.diagnostic.config({
-  float = false,
-  virtual_lines = { current_line = true },
-})
+-- vim.diagnostic.config({
+--   float = false,
+--   virtual_lines = { current_line = true },
+-- })
 
 -- LSP
 
@@ -103,4 +103,28 @@ lspconfig.fish_lsp.setup({
 
     add_common_keymaps()
   end,
+})
+
+-- !!! https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+local servers = { "html", "cssls", "ansiblels", "eslint", "jsonls", "ts_ls", "yamlls", "dockerls" }
+
+-- lsps with default config
+vim.lsp.enable(servers)
+
+vim.lsp.config("roslyn", {}) -- no vim.lsp.enable() necessary here
+
+-- IMPORTANT: vim diagnostic configuration AFTER LSPs are loaded
+vim.diagnostic.config({
+  underline = true,
+  virtual_text = false,
+  update_in_insert = false,
+  severity_sort = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = " ",
+      [vim.diagnostic.severity.WARN] = " ",
+      [vim.diagnostic.severity.HINT] = " ",
+      [vim.diagnostic.severity.INFO] = " ",
+    },
+  },
 })

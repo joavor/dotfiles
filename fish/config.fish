@@ -57,6 +57,20 @@ if status is-interactive
         zellij attach -c home
     end
 
+    # tmux
+
+    function t
+        if tmux has-session -t="(home)" 2>/dev/null
+            # The session already exists, attach to it
+            tmux attach -t "(home)"
+        else
+            # The session does not exist, create a new one
+            tmux new-session -d -s "(home)" -c "~"
+            tmux attach -t "(home)"
+        end
+
+    end
+
     # Git
 
     function gs
@@ -94,3 +108,6 @@ end
 
 # Created by `pipx` on 2025-08-04 22:01:49
 set PATH $PATH /Users/joavor/.local/bin
+
+# Added by get-aspire-cli.sh
+fish_add_path $HOME/.aspire/bin

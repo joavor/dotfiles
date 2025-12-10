@@ -22,7 +22,7 @@ start-at-login = false
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
-accordion-padding = 30
+accordion-padding = 16
 
 default-root-container-layout = "tiles"
 
@@ -39,10 +39,10 @@ on-focus-changed = ['move-mouse window-lazy-center']
 
 inner.horizontal = 4
 inner.vertical =   4
-outer.left =       8
-outer.bottom =     8
-outer.top =        8
-outer.right =      8
+outer.left =       4
+outer.bottom =     4
+outer.top =        4
+outer.right =      4
 # inner.horizontal = 16
 # inner.vertical =   16
 # outer.left =       16
@@ -81,6 +81,7 @@ ctrl-cmd-alt-7 = "workspace 7" # Main 7
 ctrl-cmd-alt-8 = "workspace 8" # Main 8
 ctrl-cmd-alt-9 = "workspace 9" # Main 9
 ctrl-cmd-alt-t = "workspace T" # Main - Terminal
+ctrl-cmd-alt-p = "workspace P" # Main - Personal
 ctrl-cmd-alt-a = "workspace A" # Secondary 1
 ctrl-cmd-alt-s = "workspace S" # Secondary 2
 ctrl-cmd-alt-d = "workspace D" # Secondary 3
@@ -104,6 +105,7 @@ ctrl-cmd-alt-shift-d = ["move-node-to-workspace D", "workspace D"]
 ctrl-cmd-alt-shift-f = ["move-node-to-workspace F", "workspace F"]
 ctrl-cmd-alt-shift-g = ["move-node-to-workspace G", "workspace G"]
 ctrl-cmd-alt-shift-m = ["move-node-to-workspace M", "workspace M"]
+ctrl-cmd-alt-shift-p = ["move-node-to-workspace P", "workspace P"]
 
 ctrl-cmd-alt-shift-left = ["join-with left", "mode main"]
 ctrl-cmd-alt-shift-down = ["join-with down", "mode main"]
@@ -115,9 +117,12 @@ ctrl-cmd-alt-right = "layout h_tiles"
 ctrl-cmd-alt-up = "layout v_accordion"
 ctrl-cmd-alt-down = "layout v_tiles"
 
+ctrl-cmd-alt-b = "exec-and-forget ~/Development/projects/personal/dotfiles/_scripts/aerospace-summon-browser.sh"
+
+ctrl-cmd-alt-z = "fullscreen"
+
 ctrl-cmd-alt-space = "mode join"
 ctrl-cmd-alt-enter = "mode misc"
-ctrl-cmd-alt-esc = "mode service"
 
 
 
@@ -140,19 +145,11 @@ r = ["balance-sizes", "mode main"]
 
 esc = "mode main"
 
+enter = [ "reload-config", "mode main" ]
 ctrl-cmd-alt-period = ["exec-and-forget xcrun simctl ui booted appearance dark", "mode main"]
 ctrl-cmd-alt-comma = ["exec-and-forget xcrun simctl ui booted appearance light", "mode main"]
 
 
-
-[mode.service.binding]
-
-esc = "mode main"
-
-enter = [
-    "reload-config",
-    "mode main"
-]
 
 [workspace-to-monitor-force-assignment]
 
@@ -166,6 +163,7 @@ enter = [
 8 = "main"
 9 = "main"
 T = "main"
+P = "main"
 
 A = "secondary"
 S = "secondary"

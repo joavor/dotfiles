@@ -18,6 +18,7 @@ return { -- Highlight, edit, and navigate code
       "vimdoc",
       "lua",
       "typescript",
+      "razor",
     },
     -- Autoinstall languages that are not installed
     auto_install = true,

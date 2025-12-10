@@ -1,9 +1,10 @@
+# background = 1a1a1a
 background = 0E0E0E
 foreground = D3C6AA
 cursor-color = 979D92
 selection-background = 5D5C69
 selection-foreground = D3C6AA
-palette = 0=#232A2E
+palette = 0=#AAAAAA
 palette = 1=#E67E80
 palette = 2=#A7C080
 palette = 3=#DBBC7F
