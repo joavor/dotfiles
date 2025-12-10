@@ -16,9 +16,11 @@ return {
       "S",
       mode = { "n", "x", "o" },
       function()
-        require("flash").treesitter()
+        require("flash").jump({
+          pattern = vim.fn.expand("<cword>"),
+        })
       end,
-      desc = "Flash Treesitter",
+      desc = "Flash with current word",
     },
   },
 }

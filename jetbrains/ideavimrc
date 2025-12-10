@@ -41,14 +41,16 @@ let mapleader = ' '
 
 " Modes
 map <leader>mp <Action>(TogglePresentationMode)
-map <leader>md <Action>(ToggleDistractionFreeMode)
+map <leader>md <Action>(ToggleDistractionFreeMode)<Action>(EditorToggleShowLineNumbers)
 map <leader>mz <Action>(ChangeIdeScale)
 map <leader>mc <Action>(ToggleCompactMode)
 
 " Code
 map <leader>cf <Action>(ReformatCode)
 map <leader>cc <Action>(CommentByLineComment)
+map <leader>cr <Action>(RenameElement)
 map <leader>CC <Action>(de.netnexus.CamelCasePlugin.ToggleCamelCase)
+vmap <leader>gd <Action>(Vcs.ShowDiffChangedLines)
 
 " Navigation: Code
 nmap gd <Action>(GotoDeclaration)
@@ -68,6 +70,7 @@ nmap <c-l> <Action>(NextTab)
 nmap <c-h> <Action>(PreviousTab)
 nmap <leader>q <Action>(CloseContent)
 nmap <leader>r <Action>(RenameFile)
+map <leader><cr> <Action>(KeepTabOpen)
 
 " Navigation: Splitting
 nmap <leader>wl <Action>(NextSplitter)
@@ -107,6 +110,7 @@ if &ide =~? 'jetbrains rider'
     nmap <leader>bs <Action>(BuildSolutionAction)
     nmap <leader>bc <Action>(CleanSolutionAction)
     nmap <leader>bd <Action>(Debug)
+    nmap <leader>br <Action>(Run)
     nmap <leader>bb <Action>(ToggleLineBreakpoint)
     nmap <leader>mn <Action>(Macro.CreateMigration)
 end

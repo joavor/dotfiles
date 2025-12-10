@@ -1,4 +1,4 @@
-theme = everforest-dark
+theme = Catppuccin Mocha
 macos-titlebar-style = hidden
 window-padding-balance = true
 window-padding-x = 24
@@ -9,6 +9,5 @@ font-family = JetBrains Mono NL Regular
 cursor-style = block
 cursor-style-blink = true
 
-background = 1a1a1a
-background-opacity = 0.95
-background-blur = 40
+# background-opacity = 0.95
+# background-blur = 40
